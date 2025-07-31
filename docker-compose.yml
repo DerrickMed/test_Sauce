@@ -1,0 +1,14 @@
+services:
+  tests:
+    build: .
+    environment:
+      - CI=true
+      - BASE_URL=${BASE_URL:-https://www.saucedemo.com}
+      - TEST_USER=${TEST_USER:-standard_user}
+      - TEST_PASSWORD=${TEST_PASSWORD:-secret_sauce}
+    volumes:
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
+    ports:
+      - "9323:9323"
+    command: npm test
