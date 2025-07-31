@@ -3,7 +3,8 @@
 ```bash
 npm install
 npx playwright install
-npm test
+npm test //to run tests 
+npm run test ui //to run with Playwright ui 
 ```
 
 ## Environment Variables
